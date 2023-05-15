@@ -1,0 +1,201 @@
+import "./TodoCounter.css"
+export default function TodoCounter() {
+
+  const styleTodoCounter = {
+    color: "red",
+    backgroundColor:"#000000"
+  }
+  return (
+    <>
+        {/* <h2 style={{color:"#fff", backgroundColor: "#000000"}}> Tienes 4 tareas pendientes de 4</h2> */}
+        {/* /* <h2 style={styleTodoCounter}> Tienes 4 tareas pendientes de 4</h2> */}
+        
+        <div className="title-container">
+            <h2 className="title"> To Do: </h2>
+        </div>
+    </>
+  )
+}
+
+
+TodoList.js
+export default function TodoList(props) {
+  return (
+   <>
+    <ul className="items-container"> 
+        {props.children}
+    </ul>
+   
+   </>
+  )
+}
+
+
+TodoItem.js
+export default function TodoItem() {
+  return (
+    <>
+        <li>
+            <p>Tarea 1</p>
+            <div className="buttons-container">
+              <button className="check"> ✓ </button> 
+              <button className="cancel"> X </button> 
+            </div>
+        </li>
+        <li>
+            <p>Tarea 2</p>
+            <div className="buttons-container">
+              <button className="check"> ✓ </button> 
+              <button className="cancel"> X </button> 
+            </div>
+             
+        </li>
+        <li>
+            <p>Tarea 3</p>
+            <div className="buttons-container">
+              <button className="check"> ✓ </button> 
+              <button className="cancel"> X </button> 
+            </div>
+        </li>
+    </>
+  )
+}
+
+
+TodoSearch.js
+export default function TodoSearch() {
+  const getSearch = (ev) => console.log(ev.target.value);
+  
+  return (
+    <div className="input-container"> 
+        <h3>Tarea</h3>
+        <input 
+        type="text" 
+        placeholder="Busque una tarea"
+        onChange={(e) => getSearch(e)}
+        />    
+    </div>
+  )
+}
+
+
+AddTodo.js
+export default function AddTodo() {
+  function getNumber(nombre){
+    console.log("Hola como estas " + nombre)
+  }
+  // const getNumber = ()=>{
+
+  // }
+  return (
+    <div className="save-container">
+       <button 
+      type="submit"
+      onClick={() => {getNumber("Suldery")}}
+      > Guardar </button>
+    </div>
+  ) 
+}
+
+
+
+TodoCounter.css
+* {
+    font-family: Arial ;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f2f2;
+    margin: 20px 40px ;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #c1c0c0;
+}
+
+.title-container {
+    text-align: left;
+
+}
+
+.items-container {
+    background-color: #fff;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 5px;
+    border: 1px solid #c1c0c0;
+    list-style-type: none;
+}
+
+.items-container li {
+    text-decoration: none;
+    padding: 3px 18px ;
+    border: 1px solid #c1c0c0 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+}
+
+.buttons-container .check, .buttons-container .cancel {
+    margin-right: 5px;
+    background-color: rgb(106, 243, 106);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 3px 10px;
+}
+
+.buttons-container .cancel {
+    background-color: rgb(237, 68, 68);
+    padding: 4px 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-top: 20px;
+}
+
+.input-container h3 {
+    font-size: 15px;
+    margin-right: 25px;
+}
+
+.input-container input {
+    width: 80%;
+    padding: 5px 10px ;
+    border-radius: 5px;
+    border:1px solid #c1c0c0;
+}
+
+.save-container {
+    display: flex;  
+    align-items:center;
+    justify-content: right;
+}
+
+.save-container button {
+    background-color: rgb(96, 96, 214);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+
+
+Apss.css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
